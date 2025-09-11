@@ -2,6 +2,7 @@ import { useToDoListContext } from "./hook/useToDoListContext";
 import { useState } from "react";
 
 function App() {
+
   const {tarefas,dispatch} = useToDoListContext();
   const [texto,setTexto]   = useState("");
 
@@ -21,48 +22,59 @@ function App() {
   }
 
   return (
-    <div className="bg-gray-900 h-screen p-0 m-0 flex items-center text-white">
-      <div className="container mx-auto bg-gray-800 rounded-xl shadow-md p-10 text-center">
-        <h1 className="text-2xl font-bold">TO DO LIST</h1>
-        
-        {/* ### ADICIONAR TAREFA ### */}
-        <div className="mt-10">
-          <form onSubmit={handleSubmit}>
-            <div>
-              <input 
-                type="text" 
-                name="texto"
-                value={texto}
-                onChange={(e)=>setTexto(e.target.value)}
-                className="bg-black w-full p-1 rounded-md"
-                placeholder="Digite a tarefa . . ."
-              />
-            </div>
-            <div className="flex justify-end mt-3">
-              <button type="submit" className="bg-blue-500 px-4 py-2 rounded-xl hover:bg-blue-600 hover:cursor-pointer">Adicionar</button>
-            </div>
-          </form>
-        </div>
-
-        {/* ### EDITAR TAREFA ### */}
-        <div className="mt-10">
-          {tarefas && tarefas.map((tarefa)=>(
-            <div key={tarefa.id} className="flex justify-between items-center bg-gray-900 p-2 mt-2 rounded-md shadow-sm hover:shadow-orange-100">
-              <p className={`${tarefa.feito ?"line-through" :""}`}>{tarefa.texto}</p>
-              <div className="flex">
-
-                {/* ### ALTERAR ### */}
-                <button onClick={()=>{dispatch({type:"ALTERAR",id:tarefa.id})}} className={`${tarefa.feito?"bg-orange-500 hove:bg-orange-600":"bg-blue-500 hover:bg-blue-600"} px-4 py-2 rounded-xl hover:cursor-pointer mr-1`}>{tarefa.feito ?"Desfazer" :"Concluir"}</button>
-
-                {/* ### REMOVER ### */}
-                <button onClick={()=>dispatch({type:"REMOVER",id:tarefa.id})} className="bg-red-500 px-4 py-2 rounded-xl hover:cursor-pointer hover:bg-red-600">Remover</button>
-
+    <div className="bg-gray-200 text-gray-800 flex flex-col h-screen p-0 m-0">
+      <main className="flex-grow px-3 py-20">
+        <div className="max-w-150 bg-gray-300 rounded-4xl shadow-md p-10 mx-auto">
+          
+          {/* ### ADICIONAR TAREFA ### */}
+          <div className="mt-10">
+            <form onSubmit={handleSubmit}>
+              <div>
+                <input 
+                  type="text" 
+                  name="texto"
+                  value={texto}
+                  onChange={(e)=>setTexto(e.target.value)}
+                  className="bg-gray-200 w-full px-3 py-1 rounded-xl shadow-sm"
+                  placeholder="Digite a tarefa . . ."
+                />
               </div>
-            </div>
-          ))}
-        </div>
+              <div className="flex justify-end mt-3">
+                <button type="submit" className="bg-blue-300 hover:bg-blue-400 px-2 py-1 rounded-xl shadow-sm hover:cursor-pointer">Adicionar</button>
+              </div>
+            </form>
+          </div>
 
-      </div>
+          {/* ### EDITAR TAREFA ### */}
+          <div className="mt-10">
+            {tarefas && tarefas.map((tarefa)=>(
+              <div key={tarefa.id} className="flex flex-col md:flex-row justify-between items-center bg-gray-200 px-3 md:pe-1 md:ps-3 py-1 mt-2 rounded-2xl shadow-sm hover:shadow-black">
+                <p className={`${tarefa.feito ?"line-through" :""} pb-3 md:pb-0`}>{tarefa.texto}</p>
+                <div className="flex">
+
+                  {/* ### ALTERAR ### */}
+                  <button 
+                    onClick={()=>{dispatch({type:"ALTERAR",id:tarefa.id})}} 
+                    className={`${tarefa.feito?"bg-orange-300 hover:bg-orange-400 ":"bg-blue-300 hover:bg-blue-400"} px-2 py-1 rounded-xl shadow-sm hover:cursor-pointer mr-1`}
+                  >
+                    {tarefa.feito ?"Desfazer" :"Concluir"}
+                  </button>
+
+                  {/* ### REMOVER ### */}
+                  <button 
+                    onClick={()=>dispatch({type:"REMOVER",id:tarefa.id})} 
+                    className="bg-red-400 hover:bg-red-500 px-2 py-1 rounded-xl hover:cursor-pointer shadow-sm"
+                  >
+                    Remover
+                  </button>
+
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </main>
     </div>
   );
 }
