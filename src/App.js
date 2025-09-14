@@ -8,13 +8,16 @@ import {
 // #### PAGES ####
   import Login from "./pages/Login";
   import Cadastrar from "./pages/Cadastrar";
-  import Lists from "./pages/Lists";
+  import ToDoList from "./pages/ToDoList";
 
 // #### HOOKS ####
   import { useAuth } from "./hook/useAuth";
 
 // #### COMPONENTES ####
  import NavBar from "./component/NavBar";
+ import Footer from "./component/Footer";
+
+
 
 
 function App() {
@@ -32,15 +35,16 @@ function App() {
 
           <BrowserRouter>            
             <Routes>
-              <Route path="/login"     element={(!user)?<Login />    :<Navigate to="/lists" />}></Route>
-              <Route path="/cadastrar" element={(!user)?<Cadastrar />:<Navigate to="/lists" />}></Route>
-              <Route path="/lists"     element={(user)?<Lists />     :<Navigate to="/login" />}></Route>
+              <Route path="/login"     element={(!user)?<Login />     :<Navigate to="/todolist" />}></Route>
+              <Route path="/cadastrar" element={(!user)?<Cadastrar /> :<Navigate to="/todolist" />}></Route>
+              <Route path="/todolist"  element={(user)?<ToDoList />   :<Navigate to="/login" />}></Route>
               <Route path="*"          element={<Navigate to="/login" />}></Route>
             </Routes>
           </BrowserRouter>
 
         </div>
       </main>
+      <Footer></Footer>
     </div>
   );
 }

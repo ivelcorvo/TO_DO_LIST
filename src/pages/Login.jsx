@@ -4,6 +4,8 @@ import { useAuthActions } from "../hook/useAuthActions";
 
 const Login = () => {
 
+  const classInput = "bg-gray-200 w-full px-3 py-1 rounded-xl shadow-sm";
+
   const {error,loading,loginUsuario} = useAuthActions();
 
   const [email,setEmail]       = useState("");
@@ -27,6 +29,11 @@ const Login = () => {
 
   };
 
+  const handlePreencherCamps = ()=>{
+    setEmail("levialves_teste123@gmail.com");
+    setPassword("Levi123@");
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -36,7 +43,7 @@ const Login = () => {
             name="Usuário"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-gray-200 w-full px-3 py-1 rounded-xl shadow-sm"
+            className={classInput}
             placeholder="Email . . ."
           />
         </div>
@@ -46,22 +53,33 @@ const Login = () => {
             name="Senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="bg-gray-200 w-full px-3 py-1 rounded-xl shadow-sm"
+            className={classInput}
             placeholder="Senha . . ."
           />
         </div>
         <div className="flex justify-end mt-5">
           <button 
             type="submit" 
-            className="bg-blue-300 hover:bg-blue-400 px-3 py-1 rounded-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+            className="bg-blue-300 hover:bg-blue-400 px-3 py-0.5 rounded-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
             disabled={loading}
           >
             {(loading)?"Entando. . .":"Entrar"}
           </button>
         </div>
       </form>
-      <div className="mt-5">
-        <p className="text-sm"> Não tem cadastro? <Link to="/cadastrar" className="bg-blue-300 hover:bg-blue-400 px-2 py-0.5 rounded-xl shadow-sm hover:cursor-pointer">Cadastrar</Link></p>
+      <div className="mt-5 flex items-center">
+        <p className="text-sm me-2"> Não tem cadastro? </p>
+        <Link to="/cadastrar" className="bg-blue-300 hover:bg-blue-400 px-2 py-0.5 rounded-xl shadow-sm hover:cursor-pointer">Cadastrar</Link>
+      </div>
+      <div className="mt-5 flex items-center">
+        <p className="text-sm me-2"> Deseja testar?</p>
+        <button 
+          type="submit" 
+          className="bg-blue-300 hover:bg-blue-400 px-3 py-0.5 rounded-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+          onClick={()=>{handlePreencherCamps()}}
+        >
+          Testar
+        </button>
       </div>
       <div>{error && <p className="text-red-600">{error}</p>}</div>
     </div>
