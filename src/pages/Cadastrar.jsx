@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const Cadastrar = () => {
 
+  const classInput = "bg-gray-200 w-full px-3 py-1 rounded-xl shadow-sm";
+
   const [name, setName]                       = useState("");
   const [email, setEmail]                     = useState("");
   const [password, setPassword]               = useState("");
@@ -49,7 +51,7 @@ const Cadastrar = () => {
             name="Usuário"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="bg-gray-200 w-full px-3 py-1 rounded-xl shadow-sm"
+            className={classInput}
             placeholder="Usuário . . ."
           />
         </div>
@@ -59,7 +61,7 @@ const Cadastrar = () => {
             name="E-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-gray-200 w-full px-3 py-1 rounded-xl shadow-sm"
+            className={classInput}
             placeholder="E-mail . . ."
           />
         </div>
@@ -69,7 +71,7 @@ const Cadastrar = () => {
             name="Senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="bg-gray-200 w-full px-3 py-1 rounded-xl shadow-sm"
+            className={classInput}
             placeholder="Senha . . ."
           />
         </div>
@@ -79,7 +81,7 @@ const Cadastrar = () => {
             name="Confirmar senha"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className="bg-gray-200 w-full px-3 py-1 rounded-xl shadow-sm"
+            className={classInput}
             placeholder="Confirmar senha . . ."
           />
         </div>
