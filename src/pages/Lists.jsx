@@ -25,7 +25,7 @@ const Lists = () => {
   return (
     <>
       {/* ### ADICIONAR TAREFA ### */}
-      <div className="mt-10">
+      <div className="">
         <form onSubmit={handleSubmit}>
           <div>
             <input
