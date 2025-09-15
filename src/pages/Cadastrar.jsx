@@ -10,6 +10,7 @@ const Cadastrar = () => {
   const [email, setEmail]                     = useState("");
   const [password, setPassword]               = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword,setShowPassword]        = useState(false);
 
   const {loading, error, cadastroUsuario, logoutUsuario} = useAuthActions();
 
@@ -65,19 +66,26 @@ const Cadastrar = () => {
             placeholder="E-mail . . ."
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 relative">
           <input
-            type="password"
+            type={(showPassword)?"text":"password"}
             name="Senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className={classInput}
             placeholder="Senha . . ."
           />
+          <button 
+            type="button" 
+            className="absolute right-2 top-1 hover:cursor-pointer"
+            onClick={()=>setShowPassword(!showPassword)}
+          >
+            {(showPassword)?<i className="fa-solid fa-eye-slash"></i>:<i className="fa-solid fa-eye"></i>}
+          </button>
         </div>
         <div className="mb-3">
           <input
-            type="password"
+            type={(showPassword)?"text":"password"}
             name="Confirmar senha"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}

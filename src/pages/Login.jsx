@@ -8,8 +8,10 @@ const Login = () => {
 
   const {error,loading,loginUsuario} = useAuthActions();
 
-  const [email,setEmail]       = useState("");
-  const [password,setPassword] = useState("");
+  const [email,setEmail]               = useState("");
+  const [password,setPassword]         = useState("");
+  const [showPassword,setShowPassword] = useState(false);
+
 
   const handleSubmit = async(e)=>{
     e.preventDefault();
@@ -47,15 +49,22 @@ const Login = () => {
             placeholder="Email . . ."
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 relative">
           <input
-            type="password"
+            type={(showPassword)?"text":"password"}
             name="Senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className={classInput}
             placeholder="Senha . . ."
           />
+          <button 
+            type="button" 
+            className="absolute right-2 top-1 hover:cursor-pointer"
+            onClick={()=>setShowPassword(!showPassword)}
+          >
+            {(showPassword)?<i className="fa-solid fa-eye-slash"></i>:<i className="fa-solid fa-eye"></i>}
+          </button>
         </div>
         <div className="flex justify-end mt-5">
           <button 
