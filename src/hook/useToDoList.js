@@ -65,8 +65,22 @@ export const useToDoList = (url) => {
         setLoading(false);
       }
     };
+    const deleteAllToDoListData = async () => {
+      setError(null)
+      setLoading(true);
+      try {      
+        const token = await getToken();    
+        await apiRequest(`${url}/users/${auth.currentUser.uid}/tarefas.json`,"DELETE",null,token);
+        await getToDoListData();
+        setLoading(false);      
+      } catch (error) {
+        console.log(error);
+        setError(error);
+        setLoading(false);
+      }
+    };
 
-  // ### REMOVER DADOS ####
+  // ### ATUALIZAR DADOS | DATA.FEITO ####
     const updateToDoListData = async (id,update) => {
       setError(null)
       setLoading(true);
@@ -81,7 +95,29 @@ export const useToDoList = (url) => {
         setLoading(false);
       }
     };
+    const updateAllToDoListData = async (feito) => {
+      setError(null)
+      setLoading(true);
+      try {
+
+        // objeto com todas as tarefas atualizadas
+        const updates = {};
+        data.forEach(tarefa=>{
+          updates[tarefa.id] = {...tarefa,feito};
+        });
+
+        const token = await getToken();    
+        await apiRequest(`${url}/users/${auth.currentUser.uid}/tarefas.json`,"PATCH",updates,token);
+        await getToDoListData();
+        setLoading(false);      
+      } catch (error) {
+        console.log(error);
+        setError(error);
+        setLoading(false);
+      }
+    };
+    
 
 
-  return {data, loading, error, getToDoListData, addToDoListData, deleteToDoListData, updateToDoListData};
+  return {data, loading, error, getToDoListData, addToDoListData, deleteToDoListData, updateToDoListData, updateAllToDoListData, deleteAllToDoListData};
 };
