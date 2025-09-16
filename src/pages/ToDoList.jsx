@@ -64,7 +64,7 @@ const ToDoList = () => {
             />
             <button 
               type="submit" 
-              className="bg-blue-300 hover:bg-blue-400 px-2 py-0.5 rounded-e-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+              className="text-gray-600 bg-blue-300 hover:bg-blue-400 px-2 py-0.5 rounded-e-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
               disabled={loading}
             >
               {(loading)?"Atualizando...":"Adicionar"}
@@ -92,14 +92,14 @@ const ToDoList = () => {
 
               {/* ### ALTERAR TODOS### */}
               <button          
-                className={`bg-blue-300 hover:bg-blue-400 " px-2 py-0.5 rounded-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50`}
+                className={`bg-gray-400 hover:bg-blue-400 " px-2 py-0.5 rounded-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50`}
                 onClick={()=>{updateAllToDoListData(true)}}
                 disabled={loading}
               >
                 <i className="fa-solid fa-check"></i>
               </button>
               <button          
-                className={`bg-orange-300 hover:bg-orange-400 " px-2 py-0.5 rounded-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50`}
+                className={`bg-gray-400 hover:bg-orange-400 " px-2 py-0.5 rounded-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50`}
                 onClick={()=>{updateAllToDoListData(false)}}
                 disabled={loading}
               >
@@ -108,7 +108,7 @@ const ToDoList = () => {
 
               {/* ### REMOVER TODOS ### */}
               <button
-                className="bg-red-400 hover:bg-red-500 px-2 py-0.5 rounded-xl hover:cursor-pointer shadow-sm  disabled:cursor-not-allowed disabled:opacity-50"
+                className="bg-gray-400 hover:bg-red-500 px-2 py-0.5 rounded-xl hover:cursor-pointer shadow-sm  disabled:cursor-not-allowed disabled:opacity-50"
                 onClick={()=>{deleteAllToDoListData()}}
                 disabled={loading}
               >
