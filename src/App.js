@@ -25,7 +25,7 @@ function App() {
   if(loading) return <p>Carregando. . .</p>;
 
   return (
-    <div className="bg-gray-200 text-gray-600 flex flex-col h-screen p-0 m-0">
+    <div className="bg-gray-200 text-gray-200 flex flex-col min-h-screen p-0 m-0">
       {user && <NavBar></NavBar>}
       <main className="flex-grow px-3 pt-20">
         <div className="max-w-150 bg-gray-300 rounded-2xl shadow-md p-3 mx-auto">
