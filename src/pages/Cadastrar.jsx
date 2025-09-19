@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Cadastrar = () => {
 
-  const classInput = "bg-gray-200 w-full px-3 py-1 rounded-xl shadow-sm";
+  const classInput = "text-gray-600 bg-gray-200 w-full px-3 py-1 rounded-md shadow-sm";
 
   const [name, setName]                       = useState("");
   const [email, setEmail]                     = useState("");
@@ -96,7 +96,7 @@ const Cadastrar = () => {
         <div className="flex justify-end mt-5">
           <button 
             type="submit" 
-            className="bg-blue-300 hover:bg-blue-400 px-3 py-1 rounded-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+            className="bg-gray-400 hover:bg-gray-500 px-3 py-1 rounded-md shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
             disabled={loading}
           >
             {(loading)?"Cadastrando. . .":"Cadastrar"}
