@@ -13,10 +13,10 @@ const NavBar = () => {
         <nav className="p-2 flex flex-row justify-between items-center">
             {user && <h1 className="text-xl text-gray-700">{user.displayName}</h1>}
             <button 
-                className="bg-gray-400 hover:bg-gray-500 px-5 py-0.5 rounded-xl shadow-sm hover:cursor-pointer"
+                className="bg-gray-400 hover:bg-gray-500 px-5 py-0.5 rounded-md shadow-sm hover:cursor-pointer"
                 onClick={logoutUsuario}
             >
-                <i className="fa-solid fa-right-from-bracket"></i>
+                <i className="text-gray-200  fa-solid fa-right-from-bracket"></i>
             </button>
         </nav>
     </header>

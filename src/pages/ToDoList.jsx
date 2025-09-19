@@ -59,12 +59,12 @@ const ToDoList = () => {
               name="texto"
               value={texto}
               onChange={(e) => setTexto(e.target.value)}
-              className="bg-gray-200 w-full px-3 py-1 rounded-s-xl shadow-sm"
+              className="bg-gray-200 w-full px-3 py-1 rounded-s-md shadow-sm"
               placeholder="Digite a tarefa . . ."
             />
             <button 
               type="submit" 
-              className="text-gray-600 bg-blue-300 hover:bg-blue-400 px-2 py-0.5 rounded-e-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+              className="bg-gray-400 hover:bg-gray-500 px-2 py-0.5 rounded-e-md shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
               disabled={loading}
             >
               {(loading)?"Atualizando...":"Adicionar"}
@@ -82,7 +82,7 @@ const ToDoList = () => {
           <>
             <div className="text-center sm:text-end">
               <button          
-                className={`bg-gray-400 hover:bg-gray-500 " px-2 py-0.5 rounded-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50`}
+                className={`bg-gray-400 hover:bg-gray-500 " px-2 py-0.5 rounded-md shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50`}
                 onClick={()=>{setCollapseEditAll(!collapseEditAll)}}
               >
                 Aplicar para todos
@@ -92,14 +92,14 @@ const ToDoList = () => {
 
               {/* ### ALTERAR TODOS### */}
               <button          
-                className={`bg-gray-400 hover:bg-blue-400 " px-2 py-0.5 rounded-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50`}
+                className={`bg-gray-400 hover:bg-blue-400 " px-2 py-0.5 rounded-md shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50`}
                 onClick={()=>{updateAllToDoListData(true)}}
                 disabled={loading}
               >
                 <i className="fa-solid fa-check"></i>
               </button>
               <button          
-                className={`bg-gray-400 hover:bg-orange-400 " px-2 py-0.5 rounded-xl shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50`}
+                className={`bg-gray-400 hover:bg-orange-400 " px-2 py-0.5 rounded-md shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50`}
                 onClick={()=>{updateAllToDoListData(false)}}
                 disabled={loading}
               >
@@ -108,7 +108,7 @@ const ToDoList = () => {
 
               {/* ### REMOVER TODOS ### */}
               <button
-                className="bg-gray-400 hover:bg-red-500 px-2 py-0.5 rounded-xl hover:cursor-pointer shadow-sm  disabled:cursor-not-allowed disabled:opacity-50"
+                className="bg-gray-400 hover:bg-red-500 px-2 py-0.5 rounded-md hover:cursor-pointer shadow-sm  disabled:cursor-not-allowed disabled:opacity-50"
                 onClick={()=>{deleteAllToDoListData()}}
                 disabled={loading}
               >
