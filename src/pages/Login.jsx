@@ -60,7 +60,7 @@ const Login = () => {
           />
           <button 
             type="button" 
-            className="absolute right-2 top-1 hover:cursor-pointer"
+            className="absolute right-2 top-1 hover:cursor-pointer text-gray-400"
             onClick={()=>setShowPassword(!showPassword)}
           >
             {(showPassword)?<i className="fa-solid fa-eye-slash"></i>:<i className="fa-solid fa-eye"></i>}
