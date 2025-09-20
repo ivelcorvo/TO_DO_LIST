@@ -59,7 +59,7 @@ const ToDoList = () => {
               name="texto"
               value={texto}
               onChange={(e) => setTexto(e.target.value)}
-              className="bg-gray-200 w-full px-3 py-1 rounded-s-md shadow-sm"
+              className="text-gray-600 bg-gray-200 w-full px-3 py-1 rounded-s-md shadow-sm"
               placeholder="Digite a tarefa . . ."
             />
             <button 
