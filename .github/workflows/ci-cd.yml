@@ -2,11 +2,11 @@ name: CI/CD React GitHub Pages
 
 on:
   push:
-    branches: [ main ] # dispara sempre que houver push na main
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest   
 
     steps:
       - name: Checkout do código
@@ -35,5 +35,5 @@ jobs:
       - name: Deploy no GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages       # branch do GitHub Pages
-          folder: build          # pasta de build do CRA
+          branch: gh-pages
+          folder: build
