@@ -2,11 +2,11 @@ name: CI/CD React GitHub Pages
 
 on:
   push:
-    branches: [ main ]  # Dispara sempre que houver push na main
+    branches: [ main ]  
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest  # Evita problemas do Windows
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout do código
@@ -35,6 +35,6 @@ jobs:
       - name: Deploy no GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages       # branch que será criada automaticamente
-          folder: build          # pasta gerada pelo CRA
-          token: ${{ secrets.GITHUB_TOKEN }}  # permissão automática
+          branch: gh-pages          # branch do GitHub Pages
+          folder: build             # pasta de build do CRA
+          token: ${{ secrets.GH-PAGES-DEPLOY }}  
