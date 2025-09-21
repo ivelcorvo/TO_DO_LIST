@@ -5,8 +5,8 @@ export const apiRequest = async(url, method="GET", body=null, token=null)=>{
         body: (body)?JSON.stringify(body):undefined,
     };
 
-    if(token){
-        url += (url.includes("?")) ?"&" :"?" +`auth=${token}`;
+    if (token) {
+        url += `${url.includes("?") ? "&" : "?"}auth=${token}`;
     }
 
     const res = await fetch(url,options);
