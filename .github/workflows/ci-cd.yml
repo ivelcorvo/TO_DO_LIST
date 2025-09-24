@@ -37,4 +37,4 @@ jobs:
         with:
           branch: gh-pages          # branch do GitHub Pages
           folder: build             # pasta de build do CRA
-          token: ${{ secrets.GH_PAGES_DEPLOY }}  
+          token: ${{ secrets.GH_PAGES_DEPLOY_TO_DO_LIST }}  
