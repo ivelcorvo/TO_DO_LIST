@@ -1,5 +1,7 @@
 # ✅ TO DO LIST
 
+[![CI/CD React GitHub Pages](https://github.com/ivelcorvo/TO_DO_LIST/actions/workflows/ci-cd.yml/badge.svg?branch=main)](https://github.com/ivelcorvo/TO_DO_LIST/actions/workflows/ci-cd.yml)
+
 Aplicação desenvolvida em **React**, utilizando
 **TailwindCSS** para estilização e **Firebase Authentication** para
 login de usuários (Cada usuário possui sua própria lista de tarefas).
