@@ -54,6 +54,7 @@ const Cadastrar = () => {
             onChange={(e) => setName(e.target.value)}
             className={classInput}
             placeholder="Usuário . . ."
+            autoComplete="off"
           />
         </div>
         <div className="mb-3">
@@ -64,6 +65,7 @@ const Cadastrar = () => {
             onChange={(e) => setEmail(e.target.value)}
             className={classInput}
             placeholder="E-mail . . ."
+            autoComplete="off"
           />
         </div>
         <div className="mb-3 relative">
@@ -74,6 +76,7 @@ const Cadastrar = () => {
             onChange={(e) => setPassword(e.target.value)}
             className={classInput}
             placeholder="Senha . . ."
+            autoComplete="off"
           />
           <button 
             type="button" 
@@ -91,6 +94,7 @@ const Cadastrar = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
             className={classInput}
             placeholder="Confirmar senha . . ."
+            autoComplete="off"
           />
         </div>
         <div className="flex justify-end mt-5">

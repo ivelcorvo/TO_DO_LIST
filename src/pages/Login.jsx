@@ -47,6 +47,7 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             className={classInput}
             placeholder="Email . . ."
+            autoComplete="off"
           />
         </div>
         <div className="mb-3 relative">
@@ -57,6 +58,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             className={classInput}
             placeholder="Senha . . ."
+            autoComplete="off"
           />
           <button 
             type="button" 
@@ -76,11 +78,11 @@ const Login = () => {
           </button>
         </div>
       </form>
-      <div className="mt-5 flex items-center">
+      <div className="mt-2 flex flex-col sm:flex-row items-baseline justify-start">
         <p className="text-sm me-2 text-gray-600"> Não tem cadastro? </p>
         <Link to="/cadastrar" className="bg-gray-400 hover:bg-gray-500 px-2 py-0.5 rounded-md shadow-sm hover:cursor-pointer">Cadastrar</Link>
       </div>
-      <div className="mt-5 flex items-center">
+      <div className="mt-2 flex flex-col sm:flex-row items-baseline justify-start">
         <p className="text-sm me-2 text-gray-600"> Deseja testar?</p>
         <button 
           type="submit" 

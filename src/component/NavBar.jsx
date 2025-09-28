@@ -3,24 +3,24 @@ import { useAuthActions } from "../hook/useAuthActions";
 
 const NavBar = () => {
 
-    const {user} = useAuth();
-    // console.log(user);
+	const { user } = useAuth();
+	// console.log(user);
 
-    const {logoutUsuario} = useAuthActions();
+	const { logoutUsuario } = useAuthActions();
 
-  return (
-    <header className="w-full fixed bg-gray-300 shadow-md">
-        <nav className="p-2 flex flex-row justify-between items-center">
-            {user && <h1 className="text-xl text-gray-700">{user.displayName}</h1>}
-            <button 
-                className="bg-gray-400 hover:bg-gray-500 px-5 py-0.5 rounded-md shadow-sm hover:cursor-pointer"
-                onClick={logoutUsuario}
-            >
-                <i className="text-gray-200  fa-solid fa-right-from-bracket"></i>
-            </button>
-        </nav>
-    </header>
-  )
+	return (
+		<header className="w-full fixed bg-gray-300 shadow-md">
+			<nav className="p-2 flex flex-row justify-between items-center">
+				{user && <h1 className="text-xl text-gray-700">{user.displayName}</h1>}
+				<button
+					className="bg-gray-400 hover:bg-gray-500 px-5 py-0.5 rounded-md shadow-sm hover:cursor-pointer"
+					onClick={logoutUsuario}
+				>
+					<i className="text-gray-200  fa-solid fa-right-from-bracket"></i>
+				</button>
+			</nav>
+		</header>
+	)
 }
 
 export default NavBar

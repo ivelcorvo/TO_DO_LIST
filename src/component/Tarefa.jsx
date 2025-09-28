@@ -5,7 +5,7 @@ const Tarefa = ({
   loading
 }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 items-center bg-gray-200 px-3 sm:pe-1 sm:ps-3 py-1 mt-2 rounded-md shadow-sm hover:shadow-black">
+    <li className="grid grid-cols-1 sm:grid-cols-2 items-center bg-gray-200 px-3 sm:pe-1 sm:ps-3 py-1 mt-2 rounded-md shadow-sm hover:shadow-black">
       <div className="col-span-1 text-center sm:text-start"><p className={`${tarefa.feito ? "line-through" : ""} pb-3 sm:pb-0 text-gray-600`}>{tarefa.texto}</p></div>
       <div className="col-span-1 text-center sm:text-end space-x-1">
 
@@ -28,7 +28,7 @@ const Tarefa = ({
         </button>
 
       </div>
-    </div>
+    </li>
   )
 }
 

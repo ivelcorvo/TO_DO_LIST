@@ -53,18 +53,19 @@ const ToDoList = () => {
       {/* ### ADICIONAR TAREFA ### */}
       <div className="">
         <form onSubmit={handleSubmit}>
-          <div className="flex">
+          <div className="flex flex-col sm:flex-row items-end">
             <input
               type="text"
               name="texto"
               value={texto}
               onChange={(e) => setTexto(e.target.value)}
-              className="text-gray-600 bg-gray-200 w-full px-3 py-1 rounded-s-md shadow-sm"
+              className="text-gray-600 bg-gray-200 w-full px-3 py-1 rounded-md sm:rounded-e-none shadow-sm"
               placeholder="Digite a tarefa . . ."
+              autoComplete="off"
             />
             <button 
               type="submit" 
-              className="bg-gray-400 hover:bg-gray-500 px-2 py-0.5 rounded-e-md shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+              className="bg-gray-400 hover:bg-gray-500 px-2 py-1 mt-2 sm:mt-0 rounded-md sm:rounded-s-none shadow-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
               disabled={loading}
             >
               {(loading)?"Atualizando...":"Adicionar"}
@@ -117,15 +118,17 @@ const ToDoList = () => {
             </div>
           </>
         }
-        {(!error&&tarefas&&tarefas.length>0) && tarefas.map((tarefa) => (
-          <Tarefa 
-            key={tarefa.id} 
-            tarefa={tarefa} 
-            deleteToDoListData={deleteToDoListData}
-            updateToDoListData={updateToDoListData}
-            loading={loading}
-          ></Tarefa>
-        ))}
+        <ul>
+          {(!error&&tarefas&&tarefas.length>0) && tarefas.map((tarefa) => (
+            <Tarefa 
+              key={tarefa.id} 
+              tarefa={tarefa} 
+              deleteToDoListData={deleteToDoListData}
+              updateToDoListData={updateToDoListData}
+              loading={loading}
+            ></Tarefa>
+          ))}
+        </ul>
       </div>
     </>
   )
